@@ -1,0 +1,32 @@
+{
+   "index_settings": {
+      "indexname": "suggest",
+      "doctypes": ["suggestion"],
+      "settings": {
+         "index": {
+            "number_of_shards": 1,
+            "number_of_replicas": 0
+         }
+       },
+         "mappings": {
+            "suggestion": {
+               "_all": {
+                  "enabled": false
+               },
+               "properties": {
+                  "completion": {
+                     "type": "completion",
+                     "analyzer": "standard"
+                  },
+                  "categories": {
+                     "properties": {
+                        "id": {
+                           "type": "keyword"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+}

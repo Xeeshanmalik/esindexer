@@ -1,0 +1,22 @@
+{
+    "index_settings": {
+      "indexname": "comicbook",
+      "doctypes": ["superhero"],
+
+      "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 0
+      },
+
+      "mappings": {
+        "superhero": {
+          "properties": {
+            "_source": { "enabled": false },
+            "_all": { "enabled": false },
+            "name": { "type": "string", "index": "analyzed", "store": "true", "similarity": "BM25" },
+            "summary": { "type": "string", "index": "analyzed", "store": "true", "similarity": "BM25" }
+          }
+        }
+      }
+    }
+}
